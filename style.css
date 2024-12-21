@@ -1,0 +1,76 @@
+*, *::before,*::after{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-family: "Poppins", serif;
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.gameInfo{
+     width: 10%;
+     color: white;
+     background-color: rgba(255,255,255,0.15);
+     text-align: center;
+     border-radius: 12px;
+     padding: 0.3em 1em;
+     border: 1px solid rgba(255,255,255,0.25); 
+     position: absolute;
+     top: 10%;
+}
+.board{
+    width: 300px;
+    height: 300px;
+    display: grid;
+    gap: 1px;
+    
+    grid-template-columns: repeat(3,1fr);
+    
+    padding: 1.5em;
+    border: 1px solid rgba(255,255,255,0.25); 
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 12px;
+
+}
+.box{
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box:not(:nth-child(3n)) {
+    border-right: 1px solid white;
+  }
+  
+.box:not(:nth-last-child(-n + 3)) {
+    border-bottom:1px solid white;
+}
+.box.win{
+    background-color: rgba(0,255,0,0.3);
+}
+#newGame{
+    position: absolute;
+    display: none;
+    bottom: 10%;
+    cursor: pointer;
+    width: 7%;
+     color: white;
+     background-color: rgba(255,255,255,0.15);
+     text-align: center;
+     border-radius: 12px;
+     padding: 0.3em 1em;
+     border: 1px solid rgba(255,255,255,0.25); 
+}
+#newGame.active{
+    display: flex;
+}
